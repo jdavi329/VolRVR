@@ -15,7 +15,7 @@ test.restart()
 # sweep left 30 degrees, right 60, left 30
 for i in range(0,30):
     test.move_servo_position(1, i, 90)
-    print('Position: ", end = '')
+    print("Position: ", end = '')
     print(test.get_servo_position(0,90))
 for i in range(30, -30, -1):
     test.move_servo_position(1, i, 90)

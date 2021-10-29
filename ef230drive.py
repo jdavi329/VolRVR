@@ -2,7 +2,6 @@
 # Python Example for Drive, set LED, and set LCD
 # Fall EF230
 # Dr Amy Biegalski
-import sys
 sys.path.append('/home/pi/sphero-sdk-raspberrypi-python/')
 import sys
 import os

@@ -8,7 +8,6 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 # time related functions
 import time
-
 # import sphero sdk functions
 # allow for Observer mode or Await/Async
 import asyncio # allow concurrent code using async/await
@@ -17,12 +16,10 @@ from sphero_sdk import SpheroRvrAsync
 from sphero_sdk import RawMotorModesEnum
 from sphero_sdk import SpheroRvrObserver
 from sphero_sdk import Colors
-
 # import qwiic functions
 import qwiic_micro_oled
 import sys
 import qwiic
-
 # initialize global variables
 speed = 0
 heading = 0
@@ -39,13 +36,10 @@ rvr = SpheroRvrAsync(
 )
 
 async def main():
-    """
-    Runs the main control loop
-    """
+#  Runs the main control loop
     global speed
     global heading
     global flags
-
     await rvr.wake()
     # Give RVR time to wake up
     await asyncio.sleep(2)
@@ -64,28 +58,25 @@ async def main():
     myOLED.display()
     # Delay
     await asyncio.sleep(1)
-
     # check time
     start_time = time.time()
     elapsed_time = time.time() - start_time
-
     # go straight for 10 seconds
     while elapsed_time <=10:
         await rvr.drive_with_heading(speed=90,heading=0,flags=0)
         # Delay to allow RVR to drive
         await asyncio.sleep(1)
         elapsed_time = time.time() - start_time
-
-     # after 10 second drive, turn right.
-     # raw_motors inputs are (left_mode, left_speed, right_mode, right_speed
-     await rvr.raw_motors(2,255,1,255)  # Valid speed values are 0-255
-     print('turning right')
-     await rvr.reset_yaw()
-     # Delay
-     await asyncio.sleep(1)
-     # Stop and close
-     await rvr.drive_with_heading(speed=0,heading=0,flags=DriveFlagsBitmask.none.value)
-     await rvr.close()
+    # after 10 second drive, turn right.
+    # raw_motors inputs are (left_mode, left_speed, right_mode, right_speed
+    await rvr.raw_motors(2,255,1,255)  # Valid speed values are 0-255
+    print("turning right")
+    await rvr.reset_yaw()
+    # Delay
+    await asyncio.sleep(1)
+    # Stop and close
+    await rvr.drive_with_heading(speed=0,heading=0,flags=DriveFlagsBitmask.none.value)
+    await rvr.close()
 
     if __name__ == '__main__':
         try:

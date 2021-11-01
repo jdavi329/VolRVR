@@ -43,7 +43,7 @@ async def main():
     global flags
     await rvr.wake()
     # Give RVR time to wake up
-    await asyncio.sleep(2)
+    await asyncio.sleep(1)
     # set current heading as zero
     await rvr.reset_yaw()
     # change all LED Colors
@@ -62,30 +62,29 @@ async def main():
     # check time
     start_time = time.time()
     elapsed_time = time.time() - start_time
-    # go straight for 10 seconds
-    while elapsed_time <=10:
+    # go straight for 2 seconds
+    while elapsed_time <=2:
         await rvr.drive_with_heading(speed=90,heading=0,flags=0)
         # Delay to allow RVR to drive
         await asyncio.sleep(1)
         elapsed_time = time.time() - start_time
-    # after 10 second drive, turn right.
+    # after 2 second drive, turn right.
     # raw_motors inputs are (left_mode, left_speed, right_mode, right_speed
-    await rvr.raw_motors(2,255,1,255)  # Valid speed values are 0-255
+    await rvr.drive_with_heading(speed=60,heading=90,flags=0)  # Valid speed values are 0-255
+    await asyncio.sleep(1)
     print("turning right")
-    await rvr.reset_yaw()
+    await rvr.reset_yaw()  # adjust current heading to 0 degrees
     # Delay
     await asyncio.sleep(1)
     # Stop and close
-    await rvr.drive_with_heading(speed=0,heading=0,flags=DriveFlagsBitmask.none.value)
+    await rvr.drive_with_heading(speed=0,heading=0,flags=0)
     await rvr.close()
 
-    if __name__ == '__main__':
-        try:
-            loop.run_until_complete(
-                main()
-            )
+if __name__ == '__main__':
+    try:
+        loop.run_until_complete(
+            main()
+        )
 
-        except KeyboardInterrupt:
-            print('Program terminated by Keyboard Interrupt')
-            time.sleep(.1)
-            rvr.close()
+    except KeyboardInterrupt:
+        rvr.close()

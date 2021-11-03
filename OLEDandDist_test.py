@@ -34,7 +34,7 @@ def runExample():
             myOLED.set_cursor(0,30)
             myOLED.print("       ")
             myOLED.display()
-            myOLED.print("%5.0f % distance)
+            myOLED.print("%5.0f" % distance)
             myOLED.display()
             time.sleep(.5) # delete if using sensors for navigation
         except Exception as e:

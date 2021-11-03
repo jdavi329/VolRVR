@@ -30,11 +30,11 @@ def runExample():
             ToF.stop_ranging()
             distI = distance / 25.4
             distF = distI / 12.0
-            print("Distance(mm): %s Distance(in): %s" % (distance, distI))
+            print("Distance(mm): %5.0f Distance(in): %5.3f" % (distance, distI))
             myOLED.set_cursor(0,30)
             myOLED.print("       ")
             myOLED.display()
-            myOLED.print(distance)
+            myOLED.print("%5.0f % distance)
             myOLED.display()
             time.sleep(.5) # delete if using sensors for navigation
         except Exception as e:

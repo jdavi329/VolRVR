@@ -32,7 +32,7 @@ def runExample():
             distF = distI / 12.0
             print("Distance(mm): %5.0f Distance(in): %5.3f" % (distance, distI))
             myOLED.set_cursor(0,30)
-            myOLED.print("       ")
+            myOLED.print("    ")
             myOLED.display()
             myOLED.print("%5.0f" % distance)
             myOLED.display()

@@ -26,7 +26,7 @@ def setDriveSpeed( speed ):
 
     rvr = SpheroRvrObserver()
 
-    # drive forward, 50% speeed       
+    # drive forward, 50% speed
     rvr.drive_tank_si_units(
         left_velocity=0.75,  # Valid velocity values are [-1.555..1.555]
         right_velocity=0.75

@@ -11,13 +11,14 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'
 import time
 # get sparkfun qwiic sensor functions
 import qwiic
+import qwiic_vl53l1x
 import qwiic_micro_oled
 # import sphero sdk functions Observer mode 
 from sphero_sdk import SpheroRvrObserver
 rvr = SpheroRvrObserver()
     
     
-def setDriveSpeed( speedleft, speedright ):  # Valid velocity values are [-127..127]
+def setDriveSpeed( speedleft, speedright=speedleft ):  # Valid velocity values are [-127..127]
     print ("Driving at wheelspeed ", speedleft, " and ", speedright)
     rvr.wake()
     time.sleep(0.2)
@@ -61,4 +62,6 @@ def clearOLED():
     # Clear anything that might be displayed
     myOLED.clear(myOLED.PAGE)
     myOLED.clear(myOLED.ALL)
+    # Actually push data to OLED display
+    myOLED.display()
     return

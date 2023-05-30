@@ -18,7 +18,9 @@ from sphero_sdk import SpheroRvrObserver
 rvr = SpheroRvrObserver()
     
     
-def setDriveSpeed( speedleft, speedright=speedleft ):  # Valid velocity values are [-127..127]
+def setDriveSpeed( speedleft, speedright=None):  # Valid velocity values are [-127..127]
+    if speedright is None:
+        speedright = speedleft
     print ("Driving at wheelspeed ", speedleft, " and ", speedright)
     rvr.wake()
     time.sleep(0.2)

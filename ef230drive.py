@@ -5,9 +5,9 @@
 def setDriveSpeed( speed ):
     print ("Moving forward at ", speed)
     import sys
+    import os
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
     sys.path.append('/home/pi/sphero-sdk-raspberrypi-python/')
-    import os
     # allow pull files from two layers above and append path
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
     # time related functions

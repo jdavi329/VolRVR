@@ -5,11 +5,11 @@
 import spheroRVR
 import time
 # drive forward
-spheroRVR.setDriveSpeed(0.75,0.75)  # leftwheel, rightwheel, Valid velocity values are [-127..127]
+spheroRVR.setDriveSpeed(90,90)  # leftwheel, rightwheel, Valid velocity values are [-127..127]
 time.sleep(1)
 # stop
 spheroRVR.setDriveSpeed(0,0)  
 # turn
-spheroRVR.setDriveSpeed(-1.5,1,5)  
-time.sleep(0.5)
+spheroRVR.setDriveSpeed(-85,85)  
+time.sleep(0.1)
 spheroRVR.setDriveSpeed(0,0)  

@@ -11,6 +11,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'
 import time
 # get sparkfun qwiic sensor functions
 import qwiic
+import qwiic_micro_oled
 # import sphero sdk functions Observer mode 
 from sphero_sdk import SpheroRvrObserver
 rvr = SpheroRvrObserver()
@@ -27,5 +28,31 @@ def setDriveSpeed( speedleft, speedright ):  # Valid velocity values are [-127..
     rvr.close()
     return
 
-def getDistance():  
+def getDistance():
+    # Initialize sensors
+    ToF=qwiic.QwiicVL53L1X()
+    ToF.sensor_init()
+    # Use while true loop to continously get distance data
+    ToF.start_ranging()
+    time.sleep(.005)
+    distance = ToF.get_distance()    # Get the result of the measurement
+    time.sleep(.005)
+    ToF.stop_ranging()
+    print("Distance sensor reads: %f" % (distance))
+    return
+
+def setOLED( mytext, line=0 ):  # by default print on first line
+    # Initialize display
+    myOLED = qwiic_micro_oled.QwiicMicroOled()
+    myOLED.begin()
+    # Clear anything that might be displayed
+    myOLED.clear(myOLED.PAGE)
+    myOLED.clear(myOLED.ALL)
+    # Set default font and screen position
+    myOLED.set_font_type(0)
+    myOLED.set_cursor(0,line*15) 
+    # Print text to buffer
+    myOLED.print(mytext)
+    # Actually push data to OLED display
+    myOLED.display()
     return

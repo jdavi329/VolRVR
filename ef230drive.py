@@ -2,7 +2,7 @@
 # Python Example for Drive, set LED, and set LCD
 # Fall EF230
 # Dr Amy Biegalskiimport os
-def ef230drive(speed)
+def setDriveSpeed( speed ):
     print ("Moving forward at ", speed)
     import sys
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../')))
@@ -31,11 +31,11 @@ def ef230drive(speed)
         left_velocity=0.75,  # Valid velocity values are [-1.555..1.555]
         right_velocity=0.75
     )
-     # Delay to allow RVR to drive
-     time.sleep(1)
-     # stop
-     rvr.drive_tank_si_units(
+    # Delay to allow RVR to drive
+    time.sleep(1)
+    # stop
+    rvr.drive_tank_si_units(
         left_velocity=0.75,  # Valid velocity values are [-1.555..1.555]
         right_velocity=0.75
-     )
-     return
+    )
+    return

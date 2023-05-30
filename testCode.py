@@ -15,7 +15,6 @@ time.sleep(0.1)
 # stop
 spheroRVR.setDriveSpeed(0,0)
 spheroRVR.getDistance
-spheroRVR.clearOLED
-spheroRVR.setOLED("hello") # by default print on line 1
+words = ("line1 txt", "line2 txt", "line3 txt")
+spheroRVR.setOLED(words) 
 time.sleep(3)
-spheroRVR.setOLED("friend",2) # print on line 2

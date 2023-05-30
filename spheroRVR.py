@@ -60,3 +60,27 @@ def setOLED( thistuple ):
     # Actually push data to OLED display
     myOLED.display()
     return
+
+def setLEDs( colorleft,colorright=None ):  # e g  green
+    if colorright is None:
+        colorright = colorleft
+    rvr.wake()
+    # Give RVR time to wake up
+    time.sleep(0.5)
+    rvr.led_control.turn_leds_off()
+    rvr.led_control.set_multiple_leds_with_enums(
+        leds=[
+            RvrLedGroups.headlight_left,
+            RvrLedGroups.headlight_right
+        ],
+        colors=[
+            Colors.colorleft,
+            Colors.colorright
+        ]
+    )
+#   or         colors=[
+#                255, 0, 0,
+#                0, 255, 0
+#           ]
+    rvr.close()
+    return

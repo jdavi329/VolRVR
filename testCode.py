@@ -8,8 +8,12 @@ import time
 spheroRVR.setDriveSpeed(90,90)  # leftwheel, rightwheel, Valid velocity values are [-127..127]
 time.sleep(1)
 # stop
-spheroRVR.setDriveSpeed(0,0)  
+spheroRVR.setDriveSpeed(0,0)
 # turn
-spheroRVR.setDriveSpeed(-85,85)  
+spheroRVR.setDriveSpeed(-85,85)
 time.sleep(0.1)
-spheroRVR.setDriveSpeed(0,0)  
+spheroRVR.setDriveSpeed(0,0)
+spheroRVR.getDistance
+spheroRVR.setOLED("hello") # by default print on line 1
+time.sleep(3)
+spheroRVR.setOLED("friend",1) # print on line 2

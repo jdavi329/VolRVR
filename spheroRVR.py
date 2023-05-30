@@ -1,8 +1,6 @@
 # 30 May 2023
-# Python toolbox for Drive with tank, set LED, and set LCD
-# EF230
-# A Biegalski
-def setDriveSpeed( speedleft, speedright ):   # Valid velocity values are [-1.555..1.555]
+# EF230 with A Biegalski
+def setDriveSpeed( speedleft, speedright ):  # Valid velocity values are [-127..127]
     print ("Driving at wheelspeed ", speedleft, " and ", speedright)
     import sys
     import os
@@ -17,7 +15,7 @@ def setDriveSpeed( speedleft, speedright ):   # Valid velocity values are [-1.55
     rvr = SpheroRvrObserver()
     rvr.wake()
     time.sleep(0.2)
-    rvr.drive_tank_si_units(
+    rvr.drive_tank_normalized(
         left_velocity=speedleft,  
         right_velocity=speedright
     )

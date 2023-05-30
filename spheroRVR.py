@@ -44,26 +44,19 @@ def getDistance():
     print("Distance sensor reads: %f" % (distance))
     return
 
-def setOLED( mytext, line=1 ):  # by default print on first line
-    line=line-1 # OLED starts on line 0
+def setOLED( thistuple ):  
     # Initialize display
-    myOLED = qwiic_micro_oled.QwiicMicroOled()
-    myOLED.begin()
-    # Set default font and screen position
-    myOLED.set_font_type(0)
-    myOLED.set_cursor(0,line*15) 
-    # Print text to buffer
-    myOLED.print(mytext)
-    # Actually push data to OLED display
-    myOLED.display()
-    return
-
-def clearOLED():
     myOLED = qwiic_micro_oled.QwiicMicroOled()
     myOLED.begin()
     # Clear anything that might be displayed
     myOLED.clear(myOLED.PAGE)
     myOLED.clear(myOLED.ALL)
+    # Set default font and screen position
+    myOLED.set_font_type(0)
+    for i in range(len(thistuple)):
+        myOLED.set_cursor(0,i*15) 
+        # Print text to buffer
+        myOLED.print(thistuple[i])
     # Actually push data to OLED display
     myOLED.display()
     return

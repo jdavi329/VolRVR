@@ -41,8 +41,8 @@ def getDistance():
     distance = ToF.get_distance()    # Get the result of the measurement
     time.sleep(.005)
     ToF.stop_ranging()
-    print("Distance sensor reads: %f" % (distance))
-    return
+    print("Distance: %f" % (distance))
+    return distance
 
 def setOLED( thistuple ):  
     # Initialize display

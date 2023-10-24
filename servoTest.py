@@ -3,10 +3,16 @@
 # Problem:  Test Servos on Pi Servo Hat
 # Solution: use move_servo_position command.  
 # After any pan or tilt motion, rotate in opposite direction to reset servo position for the next user.
+#
+# Adapted from
+# SparkFun Electronics, November 2019, Author: Wes Furuya
+# https://github.com/sparkfun/PiServoHat_Py/blob/main/examples/ex3_get_position_180_deg_servo.py
+#
+# For raspberry pi controlled Sphero RVR
+# For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/
+#
 import pi_servo_hat
 import time
-
-
 
 # Initialize Constructor
 test = pi_servo_hat.PiServoHat()

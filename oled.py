@@ -1,4 +1,13 @@
-# Min example of OLED Display
+# A.Biegalski Oct 2020  OLED manipulation example
+#
+# For raspberry pi controlled Sphero RVR
+# prints output to onboard OLED screen
+# For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/
+# 
+#
+# Adapted from:
+# SparkFun Electronics sparkfun_autonomous_kit https://github.com/sparkfun/sparkfun_autonomous_kit
+
 import qwiic_micro_oled
 import sys
 import qwiic
@@ -6,7 +15,7 @@ import qwiic_vl53l1x
 import time
 
 # Function def line
-def runExample():
+def print2OLED():
 
     # Initialize display
     myOLED = qwiic_micro_oled.QwiicMicroOled()
@@ -21,15 +30,16 @@ def runExample():
     myOLED.set_cursor(0,0)
 
     # Print text to buffer
-    myOLED.print("TEXT HERE")
+    myOLED.print("GO VOLS")
 
     # Change screen position for multiple lines of text
     myOLED.set_cursor(0,15)
-    myOLED.print("MOAR TEXT")
+    myOLED.print("NEW LINE")
 
     # Actually push data to OLED display
     myOLED.display()
 
+    # Implement counting up example from Sparkfun
     # Set a while true loop for continuous display update
     i = 0
     while True:
@@ -48,4 +58,4 @@ def runExample():
         # Use this so that robot comunication isn't too fast
         time.sleep(0.005)
 
-runExample()
+print2OLED()

@@ -1,4 +1,4 @@
-# A.Biegalski Oct 2020  EF230 base program
+# A.Biegalski May 2023  EF230 base program
 # make edits to this code and save as a different filename
 # For raspberry pi controlled Sphero RVR
 # Objective:  drive, turn on LEDS, use OLEDs, get sensor readings

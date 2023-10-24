@@ -1,5 +1,15 @@
-# 30 May 2023
-# EF230 with A Biegalski
+# A.Biegalski 30 May 2023  EF230 base program
+# make edits to this code and save as a different filename
+# For raspberry pi controlled Sphero RVR
+# Objective:  drive, turn on LEDS, use OLEDs, get sensor readings
+# For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/
+#
+# Adapted from:
+# SparkFun Electronics sparkfun_autonomous_kit 
+# https://github.com/sparkfun/sparkfun_autonomous_kit
+# Sphero, Inc. sphero-sdk-raspberrypi-python 
+# https://github.com/sphero-inc/sphero-sdk-raspberrypi-python/getting_started/observer/
+# 
 
 import sys
 import os
@@ -15,6 +25,9 @@ import qwiic_vl53l1x
 import qwiic_micro_oled
 # import sphero sdk functions Observer mode 
 from sphero_sdk import SpheroRvrObserver
+from sphero_sdk import Colors
+from sphero_sdk import RvrLedGroups
+
 rvr = SpheroRvrObserver()
     
     

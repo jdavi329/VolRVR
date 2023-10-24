@@ -1,8 +1,17 @@
-# Min distance sensor example
+# A.Biegalski Oct 2020
+# For raspberry pi controlled Sphero RVR
+# prints live distance sensor measurements to control computer 
+# For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/
+# 
+#
+# Adapted from:
+# SparkFun Electronics sparkfun_autonomous_kit https://github.com/sparkfun/sparkfun_autonomous_kit
+# Sphero, Inc. sphero-sdk-raspberrypi-python https://github.com/sphero-inc/sphero-sdk-raspberrypi-python
+
 import qwiic
 import time
 
-def runExample():
+def printDist():
     # Initialize sensors
     ToF=qwiic.QwiicVL53L1X()
     ToF.sensor_init()
@@ -16,4 +25,4 @@ def runExample():
         ToF.stop_ranging()
         print("Distance sensor reads: %f" % (distance))
 
-runExample()
+printDist()

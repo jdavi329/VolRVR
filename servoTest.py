@@ -1,5 +1,5 @@
 # A.Biegalski
-# May 30 2023 
+# Aug 2021
 # Problem:  Test Servos on Pi Servo Hat
 # Solution: use move_servo_position command.  
 # After any pan or tilt motion, rotate in opposite direction to reset servo position for the next user.

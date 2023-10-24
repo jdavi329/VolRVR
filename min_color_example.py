@@ -1,4 +1,4 @@
-# A.Biegalski Oct 2020  Color detection example
+# A.Biegalski Aug 2021  Color detection example
 #
 # For raspberry pi controlled Sphero RVR
 # detects riding surface color and prints output to control computer

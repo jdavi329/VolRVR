@@ -1,3 +1,13 @@
+# A.Biegalski Oct 2020
+# For raspberry pi controlled Sphero RVR
+# Displays live distance sensor measurements on onboard OLED screen
+# For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/
+#
+# Adapted from:
+# SparkFun Electronics sparkfun_autonomous_kit https://github.com/sparkfun/sparkfun_autonomous_kit
+# Sphero, Inc. sphero-sdk-raspberrypi-python https://github.com/sphero-inc/sphero-sdk-raspberrypi-python
+
+
 import qwiic_micro_oled
 import sys
 import qwiic

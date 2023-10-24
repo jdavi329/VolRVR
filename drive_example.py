@@ -1,4 +1,12 @@
-# Minimum drive example
+# A.Biegalski Oct 2020
+# For raspberry pi controlled Sphero RVR
+# Driving command examples:  straight, drive with heading, and turning 
+# For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/
+# 
+#
+# Adapted from:
+# Sphero, Inc. sphero-sdk-raspberrypi-python https://github.com/sphero-inc/sphero-sdk-raspberrypi-python
+
 import sys
 sys.path.append('/home/pi/sphero-sdk-raspberrypi-python/')
 import os

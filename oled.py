@@ -1,4 +1,4 @@
-# A.Biegalski Oct 2020  OLED manipulation example
+# A.Biegalski Aug 2021  OLED manipulation example
 #
 # For raspberry pi controlled Sphero RVR
 # prints output to onboard OLED screen

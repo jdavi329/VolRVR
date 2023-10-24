@@ -1,4 +1,13 @@
-# Minimum working color detection example
+# A.Biegalski Oct 2020  Color detection example
+#
+# For raspberry pi controlled Sphero RVR
+# detects riding surface color and prints output to control computer
+# For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/
+# 
+#
+# Adapted from:
+# SparkFun Electronics sparkfun_autonomous_kit https://github.com/sparkfun/sparkfun_autonomous_kit
+# Sphero, Inc. sphero-sdk-raspberrypi-python https://github.com/sphero-inc/sphero-sdk-raspberrypi-python
 
 # Do necessary imports
 import os

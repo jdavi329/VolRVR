@@ -1,4 +1,4 @@
-# A.Biegalski Oct 2020
+# A.Biegalski Aug 2021
 # For raspberry pi controlled Sphero RVR
 # Driving command examples:  straight, drive with heading, and turning 
 # For hardware specifications refer to github readme at https://github.com/abiegals/VolRVR/

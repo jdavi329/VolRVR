@@ -1,4 +1,3 @@
-
 # Minimum drive example
 import sys
 sys.path.append('/home/pi/sphero-sdk-raspberrypi-python/')
